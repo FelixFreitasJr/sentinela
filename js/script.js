@@ -1,13 +1,12 @@
-
         // Função para formatar a data por extenso
         function formatarDataPorExtenso(data) {
-            var diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            //var diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
             var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-            var diaSemana = diasSemana[data.getDay()];
+           // var diaSemana = diasSemana[data.getDay()];
             var dia = data.getDate();
             var mes = meses[data.getMonth()];
             var ano = data.getFullYear();
-            return diaSemana + ', ' + dia + ' de ' + mes + ' de ' + ano;
+            return dia + ' de ' + mes + ' de ' + ano;
         }
 
         // Função para atualizar a hora e os minutos
@@ -23,11 +22,17 @@
         function atualizarDataHora() {
             var dataPorExtenso = formatarDataPorExtenso(new Date());
             var horaMinutos = atualizarHoraMinutos();
-            document.getElementById("data-hora").innerHTML = "Data por Extenso: " + dataPorExtenso + " - Hora Atualizada: " + horaMinutos;
+            document.getElementById("data-hora").innerHTML = "Rio de Janeiro, " + dataPorExtenso + " ás " + horaMinutos;
         }
 
         // Chama a função inicialmente
         atualizarDataHora();
+
+        // Adiciona um evento 'DOMContentLoaded'
+            document.addEventListener('DOMContentLoaded', function() {
+         // Coloque aqui qualquer código JavaScript que precise ser executado após o carregamento do DOM.
+         // Isso inclui a chamada da função 'atualizarDataHora()' se necessário.
+});
 
         // Atualiza a hora a cada minuto
         setInterval(function () {
