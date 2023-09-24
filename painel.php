@@ -21,11 +21,13 @@ include('verifica_login.php');
         <p>Olá, <?php print_r($_SESSION['email']);?></p>
         
         </header>
-        <nav>Menu<br>
-            painel de controle<br>
-            consulta<br>
-            cadastro<br>
-            <p><a href="logout.php">Sair</a></p>
+        <nav>
+            <ul>
+                <li>painel de controle</li>
+                <li>consulta</li>
+                <li>cadastro</li>
+                <li> <a href="logout.php">Sair</a></li>
+            </ul>          
     </nav>
         <section>
         <h1><p id="data-hora"></p></h1>
