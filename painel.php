@@ -22,7 +22,7 @@ include('verifica_login.php');
         
         </header>
         <nav>
-            <ul>
+            <ul class="menu">
                 <li>painel de controle</li>
                 <li>consulta</li>
                 <li>cadastro</li>
