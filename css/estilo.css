@@ -25,7 +25,6 @@ nav{
     background-color: #fff;
     margin-top: 10px;
     width: 100%;
-    max-width: 1200px;
     height: auto;
 }
 
@@ -33,7 +32,6 @@ section{
     background-color: #fff;
     margin-top: 10px;
     width: 100%;
-    max-width: 1200px;
     height: auto;
 }
 
@@ -41,7 +39,6 @@ aside{
     background-color: #fff;
     margin-top: 10px;
     width: 100%;
-    max-width: 1200px;
     height: auto;
 }
 
@@ -49,6 +46,5 @@ footer{
     background-color: #fff;
     margin-top: 10px;
     width: 100%;
-    max-width: 1200px;
     height: auto;
 }
