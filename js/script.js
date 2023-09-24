@@ -38,3 +38,9 @@
         setInterval(function () {
             atualizarDataHora();
         }, 60000); // 60000 milissegundos = 1 minuto
+
+        // Função para mostrar a seção de cadastro quando clicar no botão "Cadastrar"
+        function mostrarCadastro() {
+            var cadastro = document.getElementById("cadastro");
+            cadastro.style.display = "block";
+        }
