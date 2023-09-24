@@ -14,8 +14,20 @@ include('verifica_login.php');
     <meta name="author" content="Felix Freitas Junior">
     <meta name="description" content="Sistema de controle do almoxarifado">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    
+    <div class="principal">
+        <header>Painel de controle</header>
+        <nav>Menu</nav>
+        <section>
+        <h1>Data e Hora Atuais</h1>
+            <p id="data-hora"></p>
+
+            
+    </section>
+        <aside>conteudo relacionado</aside>
+        <footer>rodape</footer>
+    </div>
 </body>
 </html>
