@@ -53,6 +53,9 @@
     width:150px;
     }
 
+#cadastro {
+            display: none;
+
 header{
     background-color: #fff;
     max-width: 1200px;
