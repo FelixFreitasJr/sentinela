@@ -20,25 +20,17 @@
     // Execute a consulta
     $resultado = $conexao->query($sql);
 
+    // Variável para armazenar os resultados
+    $resultados = array();
+    
     // Verifique se a consulta retornou resultados
     if ($resultado->num_rows > 0) {
-        // Exiba os resultados
+        // Armazene os resultados em um array
         while ($row = $resultado->fetch_assoc()) {
-            echo "Nome: " . $row['nome'] . "<br>";
-            echo "Endereço: " . $row['endereco'] . "<br>";
-            echo "Telefone: " . $row['telefone'] . "<br>";
+            $resultados[] = $row;
         }
-    } else {
-        echo "Nenhum resultado encontrado para o CPF: $cpf";
-        // Mostrar seção de cadastro
-        echo '<div id="cadastro" style="display: none;">';
-        echo '<h2>Cadastrar novo cliente</h2>';
-        // Aqui você pode adicionar o formulário de cadastro
-        // por exemplo, nome, endereço, telefone, etc.
-        echo '</div>';
-        echo '<button onclick="mostrarCadastro()">Cadastrar</button>';
     }
-
+    
     // Feche a conexão com o banco de dados
     $conexao->close();
-    ?>
+?>
