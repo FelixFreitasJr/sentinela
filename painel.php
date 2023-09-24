@@ -55,22 +55,33 @@ include('verifica_login.php');
             // Se o formulário foi enviado e não há resultados, exiba uma mensagem
             echo "Nenhum resultado encontrado para o CPF: $cpf";
             
-            // Mostrar seção de cadastro
-            echo '<div id="cadastro">';
-            echo '<h2>Cadastrar novo cliente</h2>';
-            
-            // Pré-preencher o campo CPF com o valor informado
-            echo '<form method="post" action="processar_cadastro.php">';
-            echo '<input type="hidden" name="cpf" value="' . $cpf . '">';
-            echo 'Nome: <input type="text" name="nome" required><br>';
-            echo 'Empresa: <input type="text" name="empresa" required><br>';
-            echo 'Função: <input type="text" name="funcao" required><br>';
-            echo '<input type="submit" value="Cadastrar">';
-            echo '</form>';
-            echo '</div>';
-            echo '<button onclick="mostrarCadastro()">Cadastrar</button>';
-        }
-            ?>
+            // Mostrar o formulário de cadastro usando JavaScript
+        echo '<script>
+                document.getElementById("cadastro").style.display = "block";
+              </script>';
+            }
+        ?>
+
+        <h2>Cadastrar novo cliente</h2>
+        <!-- Formulário de cadastro -->
+        <div id="cadastro">
+            <form method="post" action="processar_cadastro.php">
+                <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
+                Nome: <input type="text" name="nome" required><br>
+                Empresa: <input type="text" name="empresa" required><br>
+                Função: <input type="text" name="funcao" required><br>
+                <input type="submit" value="Cadastrar">
+            </form>
+            <script>
+                // Função para validar o CPF quando o formulário de consulta é enviado
+                document.querySelector('form').addEventListener('submit', function (event) {
+                    const cpfInput = document.getElementById('cpf');
+                    if (!validarCPF(cpfInput.value)) {
+                        event.preventDefault(); // Impede o envio do formulário se o CPF for inválido
+                    }
+                });
+            </script>
+    </div>
         </section>
         
         <aside>
