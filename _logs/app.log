@@ -1,0 +1,8 @@
+[2023-09-25 22:05:46] [ERRO]: Isso é uma mensagem de log de nível ERRO
+[2023-09-25 22:57:40] [ERRO] [Usuário: felix.freitas@ini.fiocruz.br]: Tentativa de login falhou
+[2023-09-25 23:01:31] [ERRO] [Usuário: felix.freitas@ini.fiocruz.br]: Tentativa de login falhou
+[2023-09-26 00:58:00] [ERRO] [Usuário: felix.freitas@ini.fiocruz.br]: Tentativa de login falhou
+[2023-09-26 01:29:28] [ERRO] [Usuário: teste@gmail.com]: Tentativa de login falhou
+[2023-09-26 01:34:14] [ERRO] [Usuário: teste@gmail.com]: Tentativa de login falhou
+[2023-09-26 01:34:29] [ERRO] [Usuário: teste@gmail.com]: Tentativa de login falhou
+[2023-09-26 01:49:26] [INFO] [Usuário: abc@teste.com]: Login bem-sucedido

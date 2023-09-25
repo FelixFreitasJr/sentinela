@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('verifica_login.php');
+include('_php/verifica_login.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt_br">
@@ -20,16 +20,16 @@ include('verifica_login.php');
         </header>
         <nav>
             <ul class="menu">
-                <li><a href="#">Painel de controle</a></li>
+                <li><a href="painel.php">Painel de controle</a></li>
                 <li><a href="#">Consulta</a></li>
-                <li><a href="#">Cadastro</a></li>
-                <li><a href="logout.php">Sair</a></li>
+                <li><a href="cadastro.php">Cadastro</a></li>
+                <li><a href="../_php/logout.php">Sair</a></li>
             </ul>
         </nav>
         <section>
             <h1><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
-            <form action="consultar.php" method="post">
+            <form action="_php/consultar.php" method="post">
                 <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Informe o CPF" required>
                 <input type="submit" value="Consultar">
@@ -38,7 +38,7 @@ include('verifica_login.php');
             <!-- Verifique se a consulta retornou resultados -->
             <?php      
                 // Inclua o arquivo de consulta
-                include('consultar.php');
+                include('_php/consultar.php');
                 // Verifique se há resultados para exibir
                 if (!empty($resultados)) {
                     echo '<h2>Resultados da Consulta</h2>';
@@ -62,7 +62,7 @@ include('verifica_login.php');
             <h2>Cadastrar novo cliente</h2>
             <!-- Formulário de cadastro -->
             <div id="cadastro">
-                <form method="post" action="processar_cadastro.php">
+                <form method="post" action="_php/processar_cadastro.php">
                     <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
                     Nome: <input type="text" name="nome" required><br>
                     Empresa: <input type="text" name="empresa" required><br>
