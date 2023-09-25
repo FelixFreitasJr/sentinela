@@ -1,3 +1,22 @@
+        // script index.php
+            var email = document.getElementById('email');
+
+            email.addEventListener('focus', ()=>{
+                email.style.borderColor = "#02af09";
+            })
+            email.addEventListener('blur', ()=>{
+                email.style.borderColor = "#ccc";
+            })
+
+            var senha = document.getElementById('senha');
+
+            senha.addEventListener('focus', ()=>{
+                senha.style.borderColor = "#02af09";
+            })
+            senha.addEventListener('blur', ()=>{
+                senha.style.borderColor = "#ccc";
+            })
+        
         // Função para formatar a data por extenso
         function formatarDataPorExtenso(data) {
             //var diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];

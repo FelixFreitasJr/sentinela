@@ -4,6 +4,9 @@ define('USUARIO','root');
 define('SENHA', '');
 define('BD', 'login');
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, BD) or die ('Não foi possivel conectar');
+$conexao = new mysqli(HOST, USUARIO, SENHA, BD);
 
+if ($conexao->connect_error) {
+    die("Erro na conexão: " . $conexao->connect_error);
+}
 ?>
