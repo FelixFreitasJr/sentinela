@@ -13,7 +13,7 @@ session_start();
     <title>Login</title>
 </head>
 <body>
-    <form action="login.php" method="POST">
+    <form action="_php/login.php" method="POST">
         <h3>Sistema de Login!</h3>
 
         <input id="email" type="email" name="email" placeholder="Seu e-mail..." required autofocus/>
