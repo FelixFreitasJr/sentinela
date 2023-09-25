@@ -2,35 +2,31 @@
 session_start();
 include('conexao.php');
 
-if(empty($_POST['email']) || empty($_POST['senha'])){
+if (empty($_POST['email']) || empty($_POST['senha'])) {
     header('Location: index.php');
     exit();
 }
 
 $usuario = mysqli_real_escape_string($conexao, $_POST['email']);
-$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+$senha = $_POST['senha']; // Não hash a senha aqui, vamos fazer isso mais tarde
 
-$query = "select usuario_id, usuario from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')";
+$stmt = $conexao->prepare("SELECT usuario_id, usuario, senha FROM usuario WHERE usuario = ?");
+$stmt->bind_param("s", $usuario);
 
-$result = mysqli_query($conexao,$query);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if($result){
-    $row = mysqli_num_rows($result);
-    echo "Número de linhas retornadas: " . $row;
-} else {
-    echo "Erro na consulta: " . mysqli_error($conexao);
+if ($result) {
+    $row = $result->fetch_assoc();
+    
+    if (password_verify($senha, $row['senha'])) {
+        $_SESSION['email'] = $usuario;
+        header('Location: painel.php');
+        exit();
+    }
 }
 
-if($row ==1){
-
-    $_SESSION['email'] = $usuario;
-    header('Location: painel.php');
-    exit();
-
-} else {
-
-    $_SESSION['nao_autenticado'] = true;
-    header('Location: index.php');
-    exit();
-}
+$_SESSION['nao_autenticado'] = true;
+header('Location: index.php');
+exit();
 ?>

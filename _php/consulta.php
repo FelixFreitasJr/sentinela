@@ -1,16 +1,18 @@
 <?php
-    // Conexão com o banco de dados (substitua com suas informações de conexão)
-    $host = 'localhost';
-    $usuario = 'seu_usuario';
-    $senha = 'sua_senha';
-    $banco = 'seu_banco';
+// Conexão com o banco de dados (substitua com suas informações de conexão)
+$host = '127.0.0.1';
+$usuario = 'root';
+$senha = '';
+$banco = 'cadastro';
 
-    $conexao = new mysqli($host, $usuario, $senha, $banco);
+$conexao = new mysqli($host, $usuario, $senha, $banco);
 
-    if ($conexao->connect_error) {
-        die("Erro na conexão: " . $conexao->connect_error);
-    }
+if ($conexao->connect_error) {
+    die("Erro na conexão: " . $conexao->connect_error);
+}
 
+// Verifique se o CPF foi fornecido e está em um formato válido
+if (isset($_POST['cpf']) && preg_match('/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/', $_POST['cpf'])) {
     // Obtenha o CPF fornecido pelo usuário
     $cpf = $_POST['cpf'];
 
@@ -29,8 +31,13 @@
         while ($row = $resultado->fetch_assoc()) {
             $resultados[] = $row;
         }
+    } else {
+        echo "Nenhum resultado encontrado para o CPF: $cpf";
     }
-    
-    // Feche a conexão com o banco de dados
-    $conexao->close();
+} else {
+    echo "CPF inválido ou não fornecido.";
+}
+
+// Feche a conexão com o banco de dados
+$conexao->close();
 ?>
