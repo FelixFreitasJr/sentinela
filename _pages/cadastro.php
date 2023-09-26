@@ -1,4 +1,7 @@
 <?php
+session_start();
+include('../_php/verifica_login.php');
+
 // Inclua o arquivo de conexão com o banco de dados
 include('../_php/conexao.php');
 
@@ -50,6 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Novo Usuário</title>
 </head>
+        <header>
+            <h1>Cadastro</h1>
+            <p>Olá, <?php echo $_SESSION['email']; ?></p>
+        </header>
+        <br>
+        <?php include('../_include/menu.php'); ?>
+        <br>
 <body>
     <h2>Cadastrar Novo Usuário</h2>
     <form action="" method="POST">

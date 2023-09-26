@@ -1,6 +1,6 @@
 <?php
-session_start();
-include('_php/verifica_login.php');
+//session_start();
+include('../_php/verifica_login.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt_br">
@@ -9,7 +9,7 @@ include('_php/verifica_login.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Felix Freitas Junior">
     <meta name="description" content="Sistema de controle do almoxarifado">
-    <link rel="stylesheet" href="_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
     <title>Painel de Controle</title>
 </head>
 <body>
@@ -18,14 +18,9 @@ include('_php/verifica_login.php');
             <h1>Painel de controle</h1>
             <p>Olá, <?php echo $_SESSION['email']; ?></p>
         </header>
-        <nav>
-            <ul class="menu">
-                <li><a href="painel.php">Painel de controle</a></li>
-                <li><a href="#">Consulta</a></li>
-                <li><a href="cadastro.php">Cadastro</a></li>
-                <li><a href="../_php/logout.php">Sair</a></li>
-            </ul>
-        </nav>
+        <br>
+        <?php include('../_include/menu.php'); ?>
+        <br>
         <section>
             <h1><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
@@ -38,7 +33,7 @@ include('_php/verifica_login.php');
             <!-- Verifique se a consulta retornou resultados -->
             <?php      
                 // Inclua o arquivo de consulta
-                include('_php/consultar.php');
+                include('../_php/consultar.php');
                 // Verifique se há resultados para exibir
                 if (!empty($resultados)) {
                     echo '<h2>Resultados da Consulta</h2>';
@@ -59,10 +54,11 @@ include('_php/verifica_login.php');
                 }
             ?>
 
-            <h2>Cadastrar novo cliente</h2>
+            
             <!-- Formulário de cadastro -->
             <div id="cadastro">
-                <form method="post" action="_php/processar_cadastro.php">
+            <h2>Cadastro novo</h2>
+                <form method="post" action="../_php/processar_cadastro.php">
                     <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
                     Nome: <input type="text" name="nome" required><br>
                     Empresa: <input type="text" name="empresa" required><br>
@@ -80,17 +76,19 @@ include('_php/verifica_login.php');
                 </script>
             </div>
         </section>
-        
+        <!--
         <aside>
             informar a justificativa e a quantidade quando disponível<br>
             botão para salvar os dados informados<br>
             validação do cadastro no banco de dados
         </aside>
+        
         <footer>
             rodapé<br>
             informações sobre programador e direitos autorais.
         </footer>
     </div>
-    <script src="js/script.js"></script>
+    -->
+    <script src="../_js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+/* Estilo para a lista não ordenada (ul) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Cor de fundo do menu */
+}
+
+/* Estilo para os itens da lista (li) */
+nav li {
+    display: inline-block;
+    margin-right: 20px; /* Espaço entre os itens do menu */
+}
+
+/* Estilo para os links (a) */
+nav a {
+    text-decoration: none;
+    color: #fff; /* Cor do texto dos links */
+    font-weight: bold;
+}
+
+/* Estilo para os links quando passar o mouse por cima (hover) */
+nav a:hover {
+    color: #ff9900; /* Cor do texto dos links no hover */
+}
