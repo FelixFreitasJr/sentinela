@@ -97,3 +97,14 @@
             }
             return true;
         }
+        const nivelSwitch = document.getElementById("nivelSwitch");
+        const nivelLabel = document.getElementById("nivelLabel");
+        
+        nivelSwitch.addEventListener("change", function() {
+          if (nivelSwitch.checked) {
+            nivelLabel.textContent = "ADM";
+          } else {
+            nivelLabel.textContent = "Operacional";
+          }
+        });
+        

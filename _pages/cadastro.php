@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../_php/verifica_login.php');
+
 // Inclua o arquivo de conexão com o banco de dados
 include('../_php/conexao.php');
 
@@ -10,9 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Valide os campos do formulário (você pode adicionar mais validações)
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $nivel = isset($_POST['nivel']) ? $_POST['nivel'] : 2; // Nível padrão 2 (Operacional)
 
     if (empty($email) || empty($senha)) {
-        echo "Por favor, preencha todos os campos.";
+        $erro = "Por favor, preencha todos os campos.";
     } else {
         // Verifique se o email já existe no banco de dados
         $verificar_email = "SELECT COUNT(*) FROM usuario WHERE usuario = ?";
@@ -24,20 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->close();
 
         if ($quantidade > 0) {
-            echo "Este email já está em uso. Escolha outro.";
+            $erro = "Este email já está em uso. Escolha outro.";
         } else {
             // Criptografe a senha antes de armazená-la no banco de dados
             $senha_hash = password_hash($senha, PASSWORD_BCRYPT);
 
             // Insira o novo usuário no banco de dados
-            $inserir_usuario = "INSERT INTO usuario (usuario, senha) VALUES (?, ?)";
+            $inserir_usuario = "INSERT INTO usuario (usuario, senha, nivel) VALUES (?, ?, ?)";
             $stmt = $conexao->prepare($inserir_usuario);
-            $stmt->bind_param("ss", $email, $senha_hash);
+            $stmt->bind_param("ssi", $email, $senha_hash, $nivel);
 
             if ($stmt->execute()) {
-                echo "Usuário cadastrado com sucesso!";
+                $mensagem = "Usuário cadastrado com sucesso!";
             } else {
-                echo "Erro ao cadastrar o usuário. Tente novamente.";
+                $erro = "Erro ao cadastrar o usuário. Tente novamente.";
             }
             $stmt->close();
         }
@@ -65,22 +67,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br>
 <body>
     
-        <form action="" method="POST">
-        <h3>Cadastrar Novo Usuário</h3>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <br>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <br>
-            <input type="submit" value="Cadastrar">
-            
+    <form action="" method="POST">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <br>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <br>
+        
+        <label for="nivel">Operacional</label>
+        <div class="toggle-switch">
+            <input type="checkbox" id="nivel" name="nivel" value="1">
+            <label for="nivel"></label>
+        </div>
+        <label for="nivel">Administrativo</label>
+        <br><br>
+        <input type="submit" value="Cadastrar">
+        
         <div class="notification is-danger">
-            <?php
+        <?php
             if (isset($erro)) {
                 echo $erro;
+            } elseif (isset($mensagem)) {
+                echo $mensagem;
             }
             ?>
         </div>
-        </form>
-    </div>
+    </form>
+</div>
+<script src="../_js/script.js"></script>
 </body>
 </html>

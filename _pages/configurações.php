@@ -62,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <!-- Formulário para alteração de senha -->
     <form action="" method="POST">
-        <h3>Alterar Senha</h3>
         <input type="password" name="senha_atual" placeholder="Senha Atual:" required>
         <br>
         <input type="password" name="nova_senha" placeholder="Nova Senha:" required>

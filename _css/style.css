@@ -115,3 +115,31 @@ p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 200px;
 }
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:50%;
+    height: 100%;
+    background-color: #009010;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + label {
+    left: 5%;
+    transform: translateX(100%);
+  }
