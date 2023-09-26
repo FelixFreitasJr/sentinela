@@ -53,9 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../_css/index_style.css">
     <title>Cadastro de Usuário</title>
 </head>
+    <header>
     <?php include('../_include/header.php'); ?>
+    </header>
     <br>
+    <nav>
     <?php include('../_include/menu.php'); ?>
+    </nav>
     <br>
 <body>
     

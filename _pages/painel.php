@@ -11,13 +11,16 @@ include('../_php/verifica_login.php');
 </head>
 <body>
     <div class="principal">
-        <header>
-            <h1>Painel de controle</h1>
-            <p>Olá, <?php echo $_SESSION['email']; ?></p>
-        </header>
-        <br>
-        <?php include('../_include/menu.php'); ?>
-        <br>
+    <header>
+    <?php include('../_include/header.php'); ?>
+    <h1>Painel de Controle</h1>
+    <p>Olá, <?php echo $_SESSION['email']; ?></p>
+    </header>
+    <br>
+    <nav>
+    <?php include('../_include/menu.php'); ?>
+    </nav>
+    <br>
         <section>
             <h1><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
@@ -84,8 +87,9 @@ include('../_php/verifica_login.php');
             rodapé<br>
             informações sobre programador e direitos autorais.
         </footer>
+                -->
     </div>
-    -->
+    
     <script src="../_js/script.js"></script>
 </body>
 </html>

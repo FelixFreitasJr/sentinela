@@ -56,6 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1><?php echo "Bem-vindo, " . $nomeUsuario; ?></h1>
     </header>
     <br>
+    <nav>
+    <?php include('../_include/menu.php'); ?>
+    </nav>
 
     <!-- Formulário para alteração de senha -->
     <form action="" method="POST">

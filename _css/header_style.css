@@ -1,0 +1,15 @@
+header{
+    background-color: #fff;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 200px;
+    height: auto;
+}
+
+.imagem{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block; /* Isso remove o espaço extra abaixo da imagem */
+    margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
+}

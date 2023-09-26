@@ -1,25 +1,46 @@
-/* Estilo para a lista não ordenada (ul) */
-nav ul {
+.menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #333; /* Cor de fundo do menu */
+    float: left;
+    margin-top: 110px;
+    width: 100%;
+    height: auto;
 }
 
-/* Estilo para os itens da lista (li) */
-nav li {
-    display: inline-block;
-    margin-right: 20px; /* Espaço entre os itens do menu */
+.menu li {
+    position: relative;
+    float: left;
+    border-right: 1px solid black;
 }
 
-/* Estilo para os links (a) */
-nav a {
-    text-decoration: none;
-    color: #fff; /* Cor do texto dos links */
-    font-weight: bold;
+.menu li a {
+    color: black; 
+    text-decoration: none; 
+    padding: 5px 10px; 
+    display: block;}
+
+
+.menu li a:hover{
+    background:#009010; 
+    color:#fff; 
+    -moz-box-shadow:0 3px 10px 0 #CCC; 
+    -webkit-box-shadow:0 3px 10px 0 #ccc; 
+    text-shadow:0px 0px 5px #fff; 
 }
 
-/* Estilo para os links quando passar o mouse por cima (hover) */
-nav a:hover {
-    color: #ff9900; /* Cor do texto dos links no hover */
+.menu li  ul{
+    position:absolute; 
+    top:25px; 
+    left:0;
+    background-color:#fff; 
+    display:none;
+}  
+
+.menu li:hover ul, .menu li.over ul{
+    display:block;
 }
+
+.menu li ul li{
+    border:1px solid #c0c0c0; 
+    display:block; 
+    width:150px;
+    }
