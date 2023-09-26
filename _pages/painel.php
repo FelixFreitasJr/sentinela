@@ -1,14 +1,11 @@
 <?php
-//session_start();
+session_start();
 include('../_php/verifica_login.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Felix Freitas Junior">
-    <meta name="description" content="Sistema de controle do almoxarifado">
+    <?php include('../_include/head.php'); ?>
     <link rel="stylesheet" href="../_css/style.css">
     <title>Painel de Controle</title>
 </head>
@@ -24,7 +21,7 @@ include('../_php/verifica_login.php');
         <section>
             <h1><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
-            <form action="_php/consultar.php" method="post">
+            <form action="../_php/consultar.php" method="post">
                 <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Informe o CPF" required>
                 <input type="submit" value="Consultar">

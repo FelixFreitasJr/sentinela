@@ -1,7 +1,7 @@
 <?php
 
 // Defina a variável $logFile com o caminho para o arquivo de log desejado
-$logFile = __DIR__ . '/../_logs/app.log';
+$logFile = __DIR__ . '../_logs/app.log';
 
 function logMessage($message, $logLevel, $username = null) {
     global $logFile;

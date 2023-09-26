@@ -1,9 +1,9 @@
 <?php
     // Conexão com o banco de dados (substitua com suas informações de conexão)
-    $host = 'localhost';
-    $usuario = 'seu_usuario';
-    $senha = 'sua_senha';
-    $banco = 'seu_banco';
+    $host = '127.0.0.1';
+    $usuario = 'root';
+    $senha = '';
+    $banco = 'cadastro';
     
     $conexao = new mysqli($host, $usuario, $senha, $banco);
     
@@ -18,7 +18,7 @@
     $funcao = $_POST['funcao'];
     
     // Insira os dados no banco de dados
-    $sql = "INSERT INTO clientes (cpf, nome, empresa, funcao) VALUES ('$cpf', '$nome', '$empresa', '$funcao')";
+    $sql = "INSERT INTO  usuarios (`codigo`, `cpf`, `nome`, `empresa`, `funcao`) VALUES ('$cpf', '$nome', '$empresa', '$funcao')";
     
     if ($conexao->query($sql) === TRUE) {
         echo "Cadastro realizado com sucesso!";
