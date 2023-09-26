@@ -14,18 +14,16 @@ include('../_php/verifica_login.php');
     <header>
     <?php include('../_include/header.php'); ?>
     <h1>Painel de Controle</h1>
-    <p>Olá, <?php echo $_SESSION['email']; ?></p>
+    <p class="login">Olá, <?php echo $_SESSION['email']; ?></p>
     </header>
     <br>
     <nav>
     <?php include('../_include/menu.php'); ?>
     </nav>
-    <br>
         <section>
-            <h1><p id="data-hora"></p></h1>
+            <h1 class="relogio"><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
-            <form action="../_php/consultar.php" method="post">
-                <label for="cpf">CPF:</label>
+            <form class="form" action="../_php/consultar.php" method="post">
                 <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Informe o CPF" required>
                 <input type="submit" value="Consultar">
             </form>

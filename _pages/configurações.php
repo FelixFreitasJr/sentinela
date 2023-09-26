@@ -3,8 +3,6 @@ session_start();
 include('../_php/verifica_login.php');
 include('../_php/conexao.php');
 
-$nomeUsuario = $_SESSION['email'];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifique se o formulário foi submetido via POST
 
@@ -47,29 +45,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="pt-br">
 <head>
     <?php include('../_include/head.php'); ?>
-    <link rel="stylesheet" href="caminho-para-seu-arquivo.css">
+    <link rel="stylesheet" href="../_css/style.css">
     <title>Configurações</title>
 </head>
+<div class="principal">
 <body>
     <header>
         <?php include('../_include/header.php'); ?>
-        <h1><?php echo "Bem-vindo, " . $nomeUsuario; ?></h1>
+        <h1>Configurações</h1>
+        <p class="login">Olá, <?php echo $_SESSION['email']; ?></p>
     </header>
     <br>
     <nav>
     <?php include('../_include/menu.php'); ?>
     </nav>
-
+    
     <!-- Formulário para alteração de senha -->
     <form action="" method="POST">
         <h3>Alterar Senha</h3>
-        <label for="senha_atual">Senha Atual:</label>
-        <input type="password" name="senha_atual" required>
+        <input type="password" name="senha_atual" placeholder="Senha Atual:" required>
         <br>
-        <label for="nova_senha">Nova Senha:</label>
-        <input type="password" name="nova_senha" required>
+        <input type="password" name="nova_senha" placeholder="Nova Senha:" required>
         <br>
         <input type="submit" value="Alterar Senha">
     </form>
+    </div>
 </body>
 </html>

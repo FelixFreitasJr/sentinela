@@ -13,8 +13,15 @@
     text-align: center; /* Centralize o conteúdo horizontalmente */
 }
 
+
+
 #cadastro {
     display: none;
+}
+header h1{
+    margin-top: 180px;
+    width: 100%;
+    height: auto;
 }
 
 body{
@@ -23,7 +30,7 @@ body{
 
 section{
     background-color: #fff;
-    margin-top: 10px;
+    margin-top: 200px;
     width: 100%;
     height: auto;
 }
@@ -40,4 +47,71 @@ footer{
     margin-top: 10px;
     width: 100%;
     height: auto;
+}
+
+form{
+    background-color: white;
+    max-width: 1200px;
+    width: 60%;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 400px;
+}
+
+form h3{
+    text-align: center;
+    color:#009010;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form input[type=email],
+form input[type=password],form input[type=text]{
+    width: 50%;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+form input[type=submit]{
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
+    background: #009010;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    position: relative;
+}
+
+form input[type=submit]:hover{
+    background-color: #02af09;
+    transition: 1s;
+}
+
+form input[type=email]:focus{
+    outline: 0;
+}
+form input[type=password]:focus{
+    outline: 0;
+}
+p{
+    text-align: center;
+    color:red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.login{
+    text-align: center;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.relogio{
+    text-align: center;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 200px;
 }

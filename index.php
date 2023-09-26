@@ -5,7 +5,7 @@ session_start();
 <html lang="pt-br">
 <head>
     <?php include('../_include/head.php'); ?>
-    <link rel="stylesheet" href="_css/index_style.css">
+    <link rel="stylesheet" href="_css/style.css">
     <script src="_js/script.js"></script>
     <title>Login</title>
 </head>

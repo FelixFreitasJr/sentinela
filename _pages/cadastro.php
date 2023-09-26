@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('../_php/verifica_login.php');
-$pageTitle = "Cadastro";
 // Inclua o arquivo de conexão com o banco de dados
 include('../_php/conexao.php');
 
@@ -50,36 +49,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="pt-br">
 <head>
     <?php include('../_include/head.php'); ?>
-    <link rel="stylesheet" href="../_css/index_style.css">
+    <link rel="stylesheet" href="../_css/style.css">
     <title>Cadastro de Usuário</title>
 </head>
+<div class="principal">
     <header>
-    <?php include('../_include/header.php'); ?>
+        <?php include('../_include/header.php'); ?>
+        <h1>Cadastro de Usuário</h1>
+        <p class="login">Olá, <?php echo $_SESSION['email']; ?></p>
     </header>
-    <br>
+<br>
     <nav>
-    <?php include('../_include/menu.php'); ?>
+        <?php include('../_include/menu.php'); ?>
     </nav>
-    <br>
+<br>
 <body>
     
-    <form action="" method="POST">
-    <h3>Cadastrar Novo Usuário</h3>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" required>
-        <br>
-        <input type="submit" value="Cadastrar">
-        
+        <form action="" method="POST">
+        <h3>Cadastrar Novo Usuário</h3>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <br>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <br>
+            <input type="submit" value="Cadastrar">
+            
         <div class="notification is-danger">
-        <?php
-        if (isset($erro)) {
-            echo $erro;
-        }
-        ?>
+            <?php
+            if (isset($erro)) {
+                echo $erro;
+            }
+            ?>
+        </div>
+        </form>
     </div>
-    </form>
 </body>
 </html>
