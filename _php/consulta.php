@@ -17,7 +17,7 @@ if (isset($_POST['cpf']) && preg_match('/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/', $_POST[
     $cpf = $_POST['cpf'];
 
     // Consulta SQL (substitua com sua consulta real)
-    $sql = "SELECT nome, endereco, telefone FROM clientes WHERE cpf = '$cpf'";
+    $sql = "SELECT nome, empresa, funcao FROM usuarios WHERE cpf = '$cpf'";
 
     // Execute a consulta
     $resultado = $conexao->query($sql);
