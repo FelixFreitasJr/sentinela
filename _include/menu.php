@@ -1,5 +1,8 @@
-
-<link rel="stylesheet" type="text/css" href="../_css/menu_style.css">
+<head>
+    <?php include('../_include/head.php'); ?>
+    <link rel="stylesheet" href="_css/style.css">
+    <script src="_js/script.js"></script>
+</head>
 <nav class="menu">
             <ul class="menu">
                 <li><a href="../_pages/painel.php">Painel de controle</a></li>

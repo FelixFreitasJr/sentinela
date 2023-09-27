@@ -1,12 +1,19 @@
+<div style="display: none;">
+<?php
+session_start();
+include('../_php/verifica_login.php');
+?>
+</div>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <?php include('../_include/head.php'); ?>
     <link rel="stylesheet" href="../_css/style.css">
+    <script src="../_js/script.js"></script>
     <title>Dashboard</title>
 </head>
-<div class="principal">
 <body>
+<div class="principal">
     <header>
         <?php include('../_include/header.php'); ?>
         <h1>Dashboard</h1>
@@ -16,6 +23,9 @@
     <nav>
     <?php include('../_include/menu.php'); ?>
     </nav>
-    <section></section>
+    <section>
+        <br><br>
+    </section>
 </body>
 </html>
+

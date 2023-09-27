@@ -1,3 +1,4 @@
+<div style="display: none;">
 <?php
 session_start();
 include('../_php/verifica_login.php');
@@ -46,18 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
+</div>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <?php include('../_include/head.php'); ?>
     <link rel="stylesheet" href="../_css/style.css">
+    <script src="../_js/script.js"></script>
     <title>Cadastro de Usuário</title>
 </head>
 <div class="principal">
     <header>
         <?php include('../_include/header.php'); ?>
         <h1>Cadastro de Usuário</h1>
+        <h2 class="relogio"><p id="data-hora"></p></h2>
         <p class="login">Olá, <?php echo $_SESSION['email']; ?></p>
     </header>
 <br>
@@ -67,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br>
 <body>
     
-    <form action="" method="POST">
+    <form class="form"  action="" method="POST" style="margin-top: 15px;">
         <input type="email" name="email" placeholder="E-mail" required>
         <br>
         <input type="password" name="senha" placeholder="Senha" required>

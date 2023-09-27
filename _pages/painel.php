@@ -1,7 +1,9 @@
+<div style="display: none;">
 <?php
 session_start();
 include('../_php/verifica_login.php');
 ?>
+</div>
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
@@ -14,6 +16,7 @@ include('../_php/verifica_login.php');
     <header>
     <?php include('../_include/header.php'); ?>
     <h1>Painel de Controle</h1>
+    
     <p class="login">Olá, <?php echo $_SESSION['email']; ?></p>
     </header>
     <br>
@@ -21,13 +24,12 @@ include('../_php/verifica_login.php');
     <?php include('../_include/menu.php'); ?>
     </nav>
         <section>
-            <h1 class="relogio"><p id="data-hora"></p></h1>
             <!-- Campo para digitar o CPF -->
-            <form class="form" action="../_php/consultar.php" method="post">
+            <form class="form" action="../_php/consultar.php" method="post" style="margin-top: 115px;">
                 <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Informe o CPF" required>
                 <input type="submit" value="Consultar">
             </form>
-            
+            <div style="display: none;">
             <!-- Verifique se a consulta retornou resultados -->
             <?php      
                 // Inclua o arquivo de consulta
@@ -50,17 +52,17 @@ include('../_php/verifica_login.php');
                             document.getElementById("cadastro").style.display = "block";
                         </script>';
                 }
-            ?>
+            ?></div>
 
             
             <!-- Formulário de cadastro -->
-            <div id="cadastro">
+            <div id="cadastro" style="display:none;">
             <h2>Cadastro novo</h2>
                 <form method="post" action="../_php/processar_cadastro.php">
                     <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
-                    Nome: <input type="text" name="nome" required><br>
-                    Empresa: <input type="text" name="empresa" required><br>
-                    Função: <input type="text" name="funcao" required><br>
+                    <input type="text" name="nome" placeholder="Nome" required><br>
+                    <input type="text" name="empresa" placeholder="Empresa" required><br>
+                    <input type="text" name="funcao" placeholder="Função" required><br>
                     <input type="submit" value="Cadastrar">
                 </form>
                 <script>
@@ -74,20 +76,17 @@ include('../_php/verifica_login.php');
                 </script>
             </div>
         </section>
-        <!--
-        <aside>
-            informar a justificativa e a quantidade quando disponível<br>
-            botão para salvar os dados informados<br>
-            validação do cadastro no banco de dados
-        </aside>
         
+        <aside>
+            <h2 class="relogio"><p id="data-hora"></p></h2>
+        </aside>
+        <!--
         <footer>
             rodapé<br>
             informações sobre programador e direitos autorais.
         </footer>
                 -->
     </div>
-    
     <script src="../_js/script.js"></script>
 </body>
 </html>
