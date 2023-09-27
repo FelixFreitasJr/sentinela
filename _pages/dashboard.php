@@ -26,6 +26,9 @@ include('../_php/verifica_login.php');
     <section>
         <br><br>
     </section>
+    <footer>
+        <?php include('../_include/footer.php'); ?>
+        </footer>
 </body>
 </html>
 
