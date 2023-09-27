@@ -1,8 +1,8 @@
-<div style="display: none;">
+
 <?php
 session_start();
 ?>
-</div>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -44,10 +44,11 @@ session_start();
                 ?>
             </form>
         </section>
-    </div>
+    
     <footer>
-        <?php include('../_include/footer.php'); ?>
+        <?php include('_include/footer.php'); ?>
     </footer>
     <script src="_js/script.js"></script>
+    </div>
 </body>
 </html>
