@@ -45,7 +45,9 @@
         }
 
         // Chama a função inicialmente
-        atualizarDataHora();
+        atualizarDataHora() {
+            console.log("Função atualizarDataHora chamada");
+        };
 
         // Adiciona um evento 'DOMContentLoaded'
             document.addEventListener('DOMContentLoaded', function() {

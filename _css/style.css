@@ -14,12 +14,13 @@ body {
     background-color: #fff;
     max-width: 1200px;
     width: 100%;
-    height: 100px;
+    height: 100vmax;
     margin: auto;
     padding: 10px;
     text-align: center;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.5);
 }
-isade{
+aside{
     background-color: #fff;
     max-width: 1200px;
     width: 100%;
@@ -28,20 +29,38 @@ isade{
     padding: 10px;
     text-align: center; 
 }
+
+footer{
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: auto; /* Isso empurra o footer para a parte inferior */
+}
+
 /* Cabeçalho */
 .header-container {
     text-align: center;
     margin-top: 20px;
+    position: relative;
+    z-index: 0;
 }
 
 .header-container img {
     max-width: 100%;
     height: auto;
 }
-.relogio{
+#data-hora{
     text-align: center;
-    color:black;
-    position:absolute;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    color:black; !important;
+}
+
+hr{
+    margin-bottom: 10px;
+    border-top: 1px solid #ccc;
 }
 
 header h2{
@@ -57,7 +76,8 @@ header h2{
     margin-top: 0px;
     width: 100%;
     height: auto;
-
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
 }
 
 .menu li {
